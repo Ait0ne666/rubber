@@ -400,7 +400,7 @@ class RubberBottomSheetState extends State<RubberBottomSheet>
         _keyPeak.currentContext!.findRenderObject() as RenderBox;
     final positionPeak = renderBoxRed.localToGlobal(Offset.zero);
     final sizePeak = renderBoxRed.size;
-    final top = (sizePeak.height + (widget.headerOffset ?? 0) + positionPeak.dy);
+    final top = (sizePeak.height + 100 + positionPeak.dy);
     return (globalPosition!.dy < top);
   }
 }
