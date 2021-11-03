@@ -181,11 +181,12 @@ class RubberBottomSheetState extends State<RubberBottomSheet>
       child: widget.header,
     );
     var bottomSheet = Stack(children: <Widget>[
-      peak,
+      
       Container(
           margin: EdgeInsets.only(
               top: widget.header != null ? widget.headerHeight : 0),
-          child: widget.upperLayer)
+          child: widget.upperLayer),
+      peak,
     ]);
     var elem;
     if (_display) {
