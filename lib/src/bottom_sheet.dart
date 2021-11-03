@@ -24,13 +24,16 @@ class RubberBottomSheet extends StatefulWidget {
       this.dragFriction = 0.52,
       this.onDragStart,
       this.onDragEnd,
-      this.onTap})
+      this.onTap,
+      this.headerOffset
+      })
       : super(key: key);
 
   final ScrollController? scrollController;
   final Widget lowerLayer;
   final Widget upperLayer;
   final Widget? menuLayer;
+  final double? headerOffset;
 
   /// Friction to apply when the sheet reaches its bounds.
   /// The higher the number, the more friction is applied.
@@ -397,7 +400,7 @@ class RubberBottomSheetState extends State<RubberBottomSheet>
         _keyPeak.currentContext!.findRenderObject() as RenderBox;
     final positionPeak = renderBoxRed.localToGlobal(Offset.zero);
     final sizePeak = renderBoxRed.size;
-    final top = (sizePeak.height + positionPeak.dy);
+    final top = (sizePeak.height + (widget.headerOffset ?? 0) + positionPeak.dy);
     return (globalPosition!.dy < top);
   }
 }
