@@ -187,7 +187,7 @@ class RubberBottomSheetState extends State<RubberBottomSheet>
       
       Container(
           margin: EdgeInsets.only(
-              top: widget.header != null ? widget.headerHeight : 0),
+              top: widget.header != null ? 0 : 0),
           child: widget.upperLayer),
       peak,
     ]);
